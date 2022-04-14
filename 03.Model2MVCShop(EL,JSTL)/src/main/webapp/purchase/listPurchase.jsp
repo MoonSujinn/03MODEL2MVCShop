@@ -9,9 +9,11 @@
 <link rel="stylesheet" href="/css/admin.css" type="text/css">
 
 <script type="text/javascript">
+<!--
 	function fncGetPurchaseList() {
 		document.detailForm.submit();
 	}
+-->
 </script>
 </head>
 
@@ -71,28 +73,15 @@
 			<td align="left">${product.regDate}</td>
 			<td></td>
 			<td align="left">
-			<c:if test= "${param.menu=='search'}" >
-				<c:if test= "${purchase.proTranCode==0}" >
-				 	판매중				
-				</c:if>
-				<c:if test="${purchase.proTranCode!=0}">
-					재고없음
-				</c:if>
+			<c:if test="${purchase.tranCode.trim()==1}">
+				현재 구매완료 상태 입니다. &nbsp;<a href="/updateTranCode.do?prodNo=${product.prodNo}&tranCode=3">물건도착</a>
 			</c:if>
-			<c:if test= "${param.menu=='manage'}" >
-				<c:if test="${purchase.proTranCode==0}">
-					판매중
-				</c:if>
-				<c:if test="${purchase.proTranCode==1}">
-					구매완료&nbsp;<a href="/updateTranCode.do?prodNo=${product.prodNo}&tranCode=2">배송하기</a>
-				</c:if>
-				<c:if test="${purchase.proTranCode==2}">
-					배송중
-				</c:if>
-				<c:if test="${purchase.proTranCode==3}">
-					배송완료
-				</c:if>
-			</c:if>			
+			<c:if test="${purchase.tranCode.trim()==2}">
+				현재 배송중 상태 입니다.
+			</c:if>
+			<c:if test="${purchase.tranCode.trim()==3}">
+				현재 배송완료 상태 입니다.
+			</c:if>		
 			</td>		
 		</tr>
 		<tr>

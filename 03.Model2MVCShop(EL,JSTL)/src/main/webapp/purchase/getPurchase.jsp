@@ -46,7 +46,7 @@
 		<td class="ct_write01">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
-					<td width="105">${product.prodNo}</td>
+					<td width="105">${purchase.purchaseProd.prodNo}</td>
 					<td></td>
 				</tr>
 			</table>
@@ -72,13 +72,13 @@
 		<td class="ct_write01">
 			
 			
-	  	<c:if test="${product.paymentOption.trim()==1}">
+	  	<c:if test="${purchase.paymentOption.trim()==1}">
       
 			현금구매
 			
 		</c:if>
       
-	  	<c:if test="${product.paymentOption.trim()==2}">
+	  	<c:if test="${purchase.paymentOption.trim()==2}">
       
 			신용구매
 			

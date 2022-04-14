@@ -200,24 +200,24 @@
 			<td></td>
 			<td align="left">
 			<c:if test= "${param.menu=='search'}" >
-				<c:if test= "${purchase.proTranCode==0}" >
+				<c:if test= "${product.proTranCode=='0'}" >
 				 	판매중				
 				</c:if>
-				<c:if test="${purchase.proTranCode!=0}">
+				<c:if test="${product.proTranCode!='0'}">
 					재고없음
 				</c:if>
 			</c:if>
 			<c:if test= "${param.menu=='manage'}" >
-				<c:if test="${purchase.proTranCode==0}">
+				<c:if test="${product.proTranCode=='0'}">
 					판매중
 				</c:if>
-				<c:if test="${purchase.proTranCode==1}">
+				<c:if test="${product.proTranCode=='1'}">
 					구매완료&nbsp;<a href="/updateTranCode.do?prodNo=${product.prodNo}&tranCode=2">배송하기</a>
 				</c:if>
-				<c:if test="${purchase.proTranCode==2}">
+				<c:if test="${product.proTranCode=='2'}">
 					배송중
 				</c:if>
-				<c:if test="${purchase.proTranCode==3}">
+				<c:if test="${product.proTranCode=='3'}">
 					배송완료
 				</c:if>
 			</c:if>			

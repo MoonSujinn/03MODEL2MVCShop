@@ -18,10 +18,10 @@ public class GetPurchaseAction extends Action{
       int tranNo=Integer.parseInt(request.getParameter("tranNo"));
       
       PurchaseService service=new PurchaseServiceImpl();
-      Purchase vo=service.getPurchase(tranNo);
+      Purchase purchase=service.getPurchase(tranNo);
       
-	  request.setAttribute("vo", vo);
-	  System.out.println("prodno가져오기"+vo);
+	  request.setAttribute("purchase", purchase);
+	  System.out.println("prodno가져오기"+purchase);
       
 
       return "forward:/purchase/getPurchase.jsp";

@@ -59,27 +59,25 @@
 	</tr>
 	
 	<c:set var="i" value="0" />
-	<c:forEach var="product" items="${list}">
+	<c:forEach var="purchase" items="${list}">
 		<c:set var="i" value="${ i+1 }" />
 		<tr class="ct_list_pop">
-			<td align="center">${ i }</td>
-			<td></td>
-			<td align="center"><a href="/getPurchase.do?tranNo=${purchase.tranNo}">${purchase.tranNo}</a></td>
+			<td align="center"><a href="/getPurchase.do?tranNo=${purchase.tranNo}">${ i }</td>
 			<td></td>
 			<td align="left"><a href="/getUser.do?userId=${user.userId}">${user.userId}</a>
 			<td></td>
-			<td align="left">${product.price}</td>
+			<td align="left">${purchase.receiverName}</td>
 			<td></td>
-			<td align="left">${product.regDate}</td>
+			<td align="left">${purchase.receiverPhone}</td>
 			<td></td>
 			<td align="left">
-			<c:if test="${purchase.tranCode.trim()==1}">
+			<c:if test="${purchase.tranCode.trim()=='1'}">
 				현재 구매완료 상태 입니다. &nbsp;<a href="/updateTranCode.do?prodNo=${product.prodNo}&tranCode=3">물건도착</a>
 			</c:if>
-			<c:if test="${purchase.tranCode.trim()==2}">
+			<c:if test="${purchase.tranCode.trim()=='2'}">
 				현재 배송중 상태 입니다.
 			</c:if>
-			<c:if test="${purchase.tranCode.trim()==3}">
+			<c:if test="${purchase.tranCode.trim()=='3'}">
 				현재 배송완료 상태 입니다.
 			</c:if>		
 			</td>		

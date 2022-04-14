@@ -71,7 +71,10 @@ public class ProductDAO {
 		
 		Connection con = DBUtil.getConnection();
 		
-		String sql = "SELECT * FROM product";
+		String sql = "SELECT \r\n"
+				+ "p.prod_no, p.prod_name, p.price, p.reg_date, NVL(t.tran_status_code,0) \r\n"
+				+ "FROM product p, transaction t \r\n"
+				+ "WHERE t.prod_no(+) = p.prod_no";
 		
 		if (search.getSearchCondition() != null) {
 			if (search.getSearchCondition().equals("0") &&  !search.getSearchKeyword().equals("")) {
@@ -107,11 +110,9 @@ public class ProductDAO {
 			Product product = new Product();
 			product.setProdNo(rs.getInt("PROD_NO"));
 			product.setProdName(rs.getString("PROD_NAME"));
-			product.setProdDetail(rs.getString("PROD_DETAIL"));
-			product.setManuDate(rs.getString("MANUFACTURE_DAY"));
 			product.setPrice(rs.getInt("PRICE"));
-			product.setFileName(rs.getString("IMAGE_FILE"));
 			product.setRegDate(rs.getDate("REG_DATE"));
+			product.setProTranCode(rs.getString("NVL(t.tran_status_code,0)"));
 			
 			list.add(product);
 		}

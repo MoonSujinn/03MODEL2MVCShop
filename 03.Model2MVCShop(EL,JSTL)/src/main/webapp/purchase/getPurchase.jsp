@@ -72,13 +72,13 @@
 		<td class="ct_write01">
 			
 			
-	  	<c:if test="${purchase.paymentOption.trim()==1}">
+	  	<c:if test="${purchase.paymentOption.trim()=='1'}">
       
 			현금구매
 			
 		</c:if>
       
-	  	<c:if test="${purchase.paymentOption.trim()==2}">
+	  	<c:if test="${purchase.paymentOption.trim()=='2'}">
       
 			신용구매
 			

@@ -143,7 +143,7 @@ function fncAddPurchase() {
 		<td bgcolor="D6D6D6" width="1"></td>
 		<td class="ct_write01">
 			<input type="text" name="receiverName" 	class="ct_input_g" 
-						style="width: 100px; height: 19px" maxLength="20" value="${user.userName}" />
+						style="width: 100px; height: 19px" maxLength="20" value="${purchase.receiverName}" />
 		</td>
 	</tr>
 	<tr>
@@ -154,7 +154,7 @@ function fncAddPurchase() {
 		<td bgcolor="D6D6D6" width="1"></td>
 		<td class="ct_write01">
 			<input 	type="text" name="receiverPhone" class="ct_input_g" 
-							style="width: 100px; height: 19px" maxLength="20" value="${user.phone}" />
+							style="width: 100px; height: 19px" maxLength="20" value="${purchase.receiverPhone}" />
 		</td>
 	</tr>
 	<tr>
@@ -165,7 +165,7 @@ function fncAddPurchase() {
 		<td bgcolor="D6D6D6" width="1"></td>
 		<td class="ct_write01">
 			<input 	type="text" name="divyAddr" class="ct_input_g" 
-							style="width: 100px; height: 19px" maxLength="20" 	value="${user.addr}" />
+							style="width: 100px; height: 19px" maxLength="20" 	value="${purchase.divyAddr}" />
 		</td>
 	</tr>
 	<tr>
